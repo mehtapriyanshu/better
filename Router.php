@@ -7,6 +7,12 @@ class Router
 {
     public array $getRoutes=[];
     public array $postRoutes=[];
+    public Database $db;
+    
+    public function __construct()
+    {
+        $this->db = new Database();
+    }
 
     public function get($url,$fn)
     {
@@ -37,9 +43,15 @@ class Router
         
     }
 
-    public function renderview($view) //products/index
+    public function renderview($view,$params=[]) //products/index
     {
+        foreach($params as $key => $value){
+            $$key = $value;
+        }
+        ob_start();
         include_once __DIR__."/views/$view.php";
+        $content= ob_get_clean();
+        include_once __DIR__.'/views/layput.php';
     }
 }
 

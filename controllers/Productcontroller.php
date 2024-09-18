@@ -8,7 +8,11 @@ class Productcontroller
 {
     public function index(Router $router)
     {
-        echo $router->renderView('products/index');
+        $products = $router-> db->getproduct();
+        
+        echo $router->renderView('products/index',[
+            'products'=>$products
+        ]);
     }
 
     public function create()
