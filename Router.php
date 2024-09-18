@@ -30,7 +30,7 @@ class Router
             $fn = $this->postRoutes[$currentUrl] ?? null;
         }
         if ($fn){
-            call_user_func($fn); 
+            call_user_func($fn,$this); 
         }else {
             echo "Page not found";
         }
