@@ -37,6 +37,10 @@ class Router
         
     }
 
+    public function renderview($view) //products/index
+    {
+        include_once __DIR__."/views/$view.php";
+    }
 }
 
 
