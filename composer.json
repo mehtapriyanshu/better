@@ -1,0 +1,17 @@
+{
+    "name": "lenovo/better",
+   
+    "authors": [
+        {
+            "name": "Priyanshu Mehta",
+            "email": "priyanshumehta054@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+            }
+        }
+    
+}
